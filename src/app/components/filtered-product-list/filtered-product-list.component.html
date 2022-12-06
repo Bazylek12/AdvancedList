@@ -1,0 +1,22 @@
+<mat-card>
+  <mat-card-title></mat-card-title>
+  <mat-card-content>
+    <mat-list role="list" fxLayout="row">
+      <mat-list-item role="listitem" *ngFor="let item of categories$ | async" [routerLink]="['/products/', item]" >
+        {{item}}
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-title>Products</mat-card-title>
+  <mat-card-content>
+    <mat-list role="list">
+      <mat-list-item role="listitem" *ngFor="let item of products$ | async">
+        {{ item.title }}
+        {{ item.price }}$
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
