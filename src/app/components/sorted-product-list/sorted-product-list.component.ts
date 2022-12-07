@@ -17,7 +17,7 @@ export class SortedProductListComponent {
     this._productsService.getAll(),
     this.order$,
   ]).pipe(map(([products, order] : [ProductModel[], string]) => {
-      return products.sort((a, b): any => {
+      return products.sort((a, b): number => {
         if (a.price > b.price) {
           return order === 'asc' ? 1 : -1;
         }
