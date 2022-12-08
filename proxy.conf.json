@@ -1,7 +1,8 @@
-
 {
-  "/api": {
-    "target": "http://localhost:4200",
-    "secure": false
+  "/assets/data/*": {
+    "target": "https://eqsfaxnghe.cfolks.pl",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
   }
 }

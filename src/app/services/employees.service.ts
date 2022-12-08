@@ -9,6 +9,6 @@ export class EmployeesService {
   }
 
   getAll(): Observable<EmployeeModel[]> {
-    return this._httpClient.get<EmployeeModel[]>('https://dummy.restapiexample.com/api/v1/employees');
+    return this._httpClient.get<EmployeeModel[]>('http://localhost:9000/employees');
   }
 }

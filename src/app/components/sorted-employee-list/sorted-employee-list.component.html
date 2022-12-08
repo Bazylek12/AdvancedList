@@ -6,6 +6,11 @@
         {{item}}
       </mat-list-option>
     </mat-selection-list>
+    <mat-selection-list role="list" fxLayout="row" [multiple]="false" class="d-flex">
+      <mat-list-option role="listitem" *ngFor="let item of agesRange | async" (click)="filterAge(item.min,  item.max, item.text)">
+        {{ item.text }}
+      </mat-list-option>
+    </mat-selection-list>
   </mat-card-content>
 </mat-card>
 
@@ -14,8 +19,9 @@
   <mat-card-content>
     <mat-list role="list">
       <mat-list-item role="listitem" *ngFor="let item of employees$ | async">
-        {{item.employee_name}}
-        {{item.employee_salary}}$
+        Name: {{item.employee_name}},
+        Salary: {{item.employee_salary}}$,
+        Age: {{ item.employee_age }}
       </mat-list-item>
     </mat-list>
   </mat-card-content>
